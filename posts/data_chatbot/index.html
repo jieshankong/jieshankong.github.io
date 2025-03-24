@@ -112,41 +112,39 @@ Viele denken, für einen Chatbot brauche es vor allem technisches Know-how. Das 
 <p>2️⃣ Oft arbeite ich mit Open-Source-Lösungen wie Rasa, weil sie mehr Flexibilität bieten. Doch unabhängig davon, ob ein Chatbot mit einer Open-Source-Plattform oder einer kommerziellen Lösung entwickelt wird – viele der hier besprochenen Aspekte lassen sich auf verschiedene Systeme übertragen.</p>
 <h2 id="warum-gute-daten-für-chatbots-entscheidend-sind">Warum gute Daten für Chatbots entscheidend sind</h2>
 <p>Die Qualität und Vielfalt der Daten spielen eine zentrale Rolle, wenn es darum geht, einen leistungsfähigen Chatbot zu entwickeln. Damit das zugrunde liegende Machine-Learning-Modell wirklich präzise arbeitet, müssen die Trainingsdaten sorgfältig ausgewählt, strukturiert und aufbereitet werden.</p>
-<p><strong>Was bedeutet das konkret?</strong><br>
-Ein Chatbot kann nur so gut sein wie die Daten, mit denen er trainiert wird. Wenn die Daten <strong>unklar oder mehrdeutig</strong> sind, kann es passieren, dass der Chatbot Eingaben falsch interpretiert und unpassende Antworten gibt. Wenn die Trainingsdaten <strong>nicht einheitlich</strong> sind, fällt es dem Modell schwer, Zusammenhänge richtig zu lernen. Und wenn wichtige <strong>Daten fehlen</strong>, erkennt der Chatbot bestimmte Fragen vielleicht gar nicht erst.</p>
+<p><strong>Was bedeutet das konkret?</strong> Ein Chatbot kann nur so gut sein wie die Daten, mit denen er trainiert wird. Wenn die Daten <strong>unklar oder mehrdeutig</strong> sind, kann es passieren, dass der Chatbot Eingaben falsch interpretiert und unpassende Antworten gibt. Wenn die Trainingsdaten <strong>nicht einheitlich</strong> sind, fällt es dem Modell schwer, Zusammenhänge richtig zu lernen. Und wenn wichtige <strong>Daten fehlen</strong>, erkennt der Chatbot bestimmte Fragen vielleicht gar nicht erst.</p>
 <p>Aber nicht nur die Qualität, auch die <strong>Vielfalt</strong> der Daten ist entscheidend. Menschen drücken sich sehr unterschiedlich aus – die einen fragen: <em>„Habt ihr heute noch Tickets?“</em>, andere sagen: <em>„Kann ich für heute noch Karten bekommen?“</em> oder <em>„Gibt es für heute noch verfügbare Plätze?“</em>. Damit der Chatbot all diese Varianten versteht, müssen die Trainingsdaten möglichst viele unterschiedliche Formulierungen enthalten.</p>
-<p><strong>Wie stellt man sicher, dass die Daten gut sind?</strong><br>
-Damit ein Chatbot zuverlässig funktioniert, sollte die Datenaufbereitung einige wichtige Schritte umfassen:</p>
+<p><strong>Wie stellt man sicher, dass die Daten gut sind?</strong> Damit ein Chatbot zuverlässig funktioniert, sollte die Datenaufbereitung einige wichtige Schritte umfassen:</p>
 <p>✅ <strong>Labeling:</strong> Den Trainingsdaten müssen die richtigen Intentionen und Entitäten zugeordnet werden, damit der Chatbot weiß, was Nutzer:innen wirklich wollen.<br>
 ✅ <strong>Balancing:</strong> Es sollte darauf geachtet werden, dass keine Themen oder Formulierungsarten überrepräsentiert oder unterrepräsentiert sind.<br>
 ✅ <strong>Data Cleaning:</strong> Fehlerhafte oder doppelte Einträge sollten entfernt werden, damit das Modell keine verzerrten Muster lernt.</p>
 <p>Wenn diese Grundlagen stimmen, hat der Chatbot eine viel bessere Basis, um Anfragen präzise zu verstehen und passende Antworten zu liefern. Aber was bedeutet das nun konkret? Werfen wir einen Blick auf einige typische Probleme, die bei der Nutzung von Daten in Chatbots entstehen – und wie man sie geschickt löst.</p>
 <h2 id="mehrdeutige-anfragen-erkennen-und-gezielt-nachfragen">Mehrdeutige Anfragen erkennen und gezielt nachfragen</h2>
-<p>Ein typisches Beispiel für eine mehrdeutige Formulierung ist eine Frage wie
-👉  <em>„Gibt es Ermäßigungen?“</em> oder <em>„Gibt es noch Karten für die aktuelle Aufführung?“</em>.
-Was hier fehlt, sind entscheidende Details – beim ersten Beispiel die Art der Ermäßigung und beim zweiten das genaue Datum der gewünschten Veranstaltung.
-💡 <strong>Lösung:</strong>
+<p>Ein typisches Beispiel für eine mehrdeutige Formulierung ist eine Frage wie</p>
+<p>👉 <em>„Gibt es Ermäßigungen?“</em> oder <em>„Gibt es noch Karten für die aktuelle Aufführung?“</em>.</p>
+<p>Was hier fehlt, sind entscheidende Details – beim ersten Beispiel die Art der Ermäßigung und beim zweiten das genaue Datum der gewünschten Veranstaltung.</p>
+<p>💡 <strong>Lösung:</strong>
 Eine bewährte Lösung für dieses Problem ist es, einen Zwischenschritt einzufügen und gezielt zu überprüfen, ob die benötigten <strong>Entitäten</strong> (wie Ermäßigungskategorie oder Datum) in der Anfrage enthalten sind. Falls nicht, kann der Chatbot nachhaken:</p>
 <ul>
 <li><em>„Welche Ermäßigung meinst du genau? Studierendenrabatt, Seniorenrabatt oder eine andere Vergünstigung?“</em></li>
-<li><em>„Für welches Datum suchst du Tickets?“</em>
-<strong>In der Praxis:</strong>
-Oft stellen Nutzer:innen von sich aus sehr präzise Fragen. Ein Beispiel wäre:
-👉 <em>„Ich bin 65, mein Mann ist 67. Wir möchten morgen die Show besuchen. Gibt es Ermäßigungen für uns?“</em>
-Hier enthält die Anfrage bereits alle relevanten Informationen – das Alter der Besucher:innen, das Datum und die Absicht, eine Ermäßigung zu prüfen. Solche Anfragen sind für den Chatbot wesentlich einfacher zu verarbeiten.</li>
+<li><em>„Für welches Datum suchst du Tickets?“</em></li>
 </ul>
+<p><strong>In der Praxis:</strong></p>
+<p>Oft stellen Nutzer:innen von sich aus sehr präzise Fragen. Ein Beispiel wäre:</p>
+<p>👉 <em>„Ich bin 65, mein Mann ist 67. Wir möchten morgen die Show besuchen. Gibt es Ermäßigungen für uns?“</em></p>
+<p>Hier enthält die Anfrage bereits alle relevanten Informationen – das Alter der Besucher:innen, das Datum und die Absicht, eine Ermäßigung zu prüfen. Solche Anfragen sind für den Chatbot wesentlich einfacher zu verarbeiten.</p>
 <h2 id="mehrere-fragen-in-einer-anfrage-erkennen-und-richtig-beantworten"><strong>Mehrere Fragen in einer Anfrage erkennen und richtig beantworten</strong></h2>
-<p>Manchmal enthalten Benutzeranfragen mehrere Anliegen gleichzeitig. Ein Beispiel wäre:
-👉 <em>„Gibt es ermäßigte Tickets für Senior:innen und für Menschen mit Behinderung?“</em>
-Hier werden zwei unterschiedliche Ermäßigungen abgefragt: eine für Senior:innen und eine für Menschen mit Behinderung. In vielen Chatbot-Systemen sind diese als separate <strong>Intents</strong> hinterlegt, z. B.:</p>
+<p>Manchmal enthalten Benutzeranfragen mehrere Anliegen gleichzeitig. Ein Beispiel wäre:</p>
+<p>👉 <em>„Gibt es ermäßigte Tickets für Senior:innen und für Menschen mit Behinderung?“</em></p>
+<p>Hier werden zwei unterschiedliche Ermäßigungen abgefragt: eine für Senior:innen und eine für Menschen mit Behinderung. In vielen Chatbot-Systemen sind diese als separate <strong>Intents</strong> hinterlegt, z. B.:</p>
 <ul>
 <li><code>discount_senior</code> (Ermäßigung für Senior:innen)</li>
-<li><code>discount_disability</code> (Ermäßigung für Menschen mit Behinderung)
-💡 <strong>Lösung:</strong><br>
-Ein gut trainierter Chatbot sollte in der Lage sein, <strong>mehrere Intents gleichzeitig zu erkennen und die jeweiligen Antworten sinnvoll zu kombinieren</strong>. Eine geeignete Antwort könnte sein:
-<em>„Ja, es gibt Ermäßigungen sowohl für Senior:innen als auch für Menschen mit Behinderung. Senior:innen erhalten eine Ermäßigung von X%, und für Menschen mit Behinderung gibt es eine Ermäßigung von Y%.“</em>
-Hier fasst der Chatbot einfach die jeweiligen Antworten aus den beiden Intents zusammen und liefert eine vollständige Antwort. So erhalten die Nutzer:innen alle relevanten Informationen, ohne erneut nachfragen zu müssen.</li>
+<li><code>discount_disability</code> (Ermäßigung für Menschen mit Behinderung)</li>
 </ul>
+<p>💡 <strong>Lösung:</strong><br>
+Ein gut trainierter Chatbot sollte in der Lage sein, <strong>mehrere Intents gleichzeitig zu erkennen und die jeweiligen Antworten sinnvoll zu kombinieren</strong>. Eine geeignete Antwort könnte sein:
+<em>„Ja, es gibt Ermäßigungen sowohl für Senior:innen als auch für Menschen mit Behinderung. Senior:innen erhalten eine Ermäßigung von X%, und für Menschen mit Behinderung gibt es eine Ermäßigung von Y%.“</em></p>
+<p>Hier fasst der Chatbot einfach die jeweiligen Antworten aus den beiden Intents zusammen und liefert eine vollständige Antwort. So erhalten die Nutzer:innen alle relevanten Informationen, ohne erneut nachfragen zu müssen.</p>
 <h2 id="ähnliche-intents-klar-trennen-verwechslungen-vermeiden">Ähnliche Intents klar trennen: Verwechslungen vermeiden</h2>
 <p>In manchen Fällen gibt es in einem Unternehmen mehrere Rabatte mit ähnlicher Zielgruppe, aber unterschiedlichen Voraussetzungen. Ein Beispiel wäre:</p>
 <p>👉 Ein Unternehmen bietet zwei ähnliche Vergünstigungen an:</p>
@@ -157,9 +155,9 @@ Hier fasst der Chatbot einfach die jeweiligen Antworten aus den beiden Intents z
 <p>Eine vage formulierte Anfrage wie:<br>
 👉 <em>„Gibt es eine Aktion für Menschen mit geringem Einkommen?“</em><br>
 kann zu Missverständnissen führen, weil nicht klar ist, welcher der beiden Rabatte gemeint ist.</p>
-<p>💡 <strong>Lösung:</strong>
-Damit der Chatbot nicht fälschlicherweise die falsche Ermäßigung vorschlägt, sollten die Intents in den Trainingsdaten <strong>klar voneinander abgegrenzt</strong> werden:
-<strong><code>discount_employless</code></strong> sollte ausschließlich Anfragen enthalten, die Begriffe wie <em>arbeitslos, erwerbslos, ohne Arbeit, Sozialhilfe, Hartz IV, ALG II</em> usw. enthalten.<br>
+<p>💡 <strong>Lösung:</strong></p>
+<p>Damit der Chatbot nicht fälschlicherweise die falsche Ermäßigung vorschlägt, sollten die Intents in den Trainingsdaten <strong>klar voneinander abgegrenzt</strong> werden:</p>
+<p><strong><code>discount_employless</code></strong> sollte ausschließlich Anfragen enthalten, die Begriffe wie <em>arbeitslos, erwerbslos, ohne Arbeit, Sozialhilfe, Hartz IV, ALG II</em> usw. enthalten.<br>
 <strong><code>discount_tfa</code></strong> sollte Formulierungen enthalten, die allgemeiner von <em>geringem Einkommen</em> sprechen, aber keine expliziten Begriffe für Arbeitslosigkeit enthalten.</p>
 <h2 id="balance-zwischen-präzision-und-einfachheit-beim-intent-labeling">Balance zwischen Präzision und Einfachheit beim Intent-Labeling</h2>
 <p>Beim Intent-Labeling treten oft zwei gegensätzliche Herausforderungen auf: Einerseits gibt es Formulierungen, die sich inhaltlich stark ähneln, aber unterschiedliche Antworten erfordern. Andererseits gibt es Fälle, in denen verschiedene Anfragen zwar eigentlich unterschiedliche Antworten bräuchten, aber zur Vereinfachung unter einem gemeinsamen Intent zusammengefasst werden.</p>
@@ -200,12 +198,17 @@ Anstatt für jede Variante separate Intents zu erstellen, enthält die Chatbot-A
   <div class="tags pb-4 pt-2">
     
     
-        <a class="badge rounded-pill text-uppercase text-bg-secondary" href="/tags/hugo/">hugo</a>
-        <a class="badge rounded-pill text-uppercase text-bg-secondary" href="/tags/themes/">themes</a>
+        <a class="badge rounded-pill text-uppercase text-bg-secondary" href="/tags/chatbot/">chatbot</a>
+        <a class="badge rounded-pill text-uppercase text-bg-secondary" href="/tags/data/">data</a>
   </div>
 
       <div class="row">
     <div class="col-md">
+        
+        <a href="https://jieshankong.github.io/posts/example-post/">
+            <span>previous: </span>
+            <span>Welcome To not-much</span>
+        </a>
         
     </div>
     <div class="col-md text-md-end">
