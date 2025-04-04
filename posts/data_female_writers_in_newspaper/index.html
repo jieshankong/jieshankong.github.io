@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head>
+  
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" type="image/png" href="https://jieshankong.github.io/favicon.ico" />
+<meta property="og:title" content="Wer schreibt die Nachrichten? – Eine datengestützte Spurensuche zur Geschlechterverteilung im Journalismus" />
+<meta property="og:description" content="Dieser Blogartikel untersucht mithilfe eines eigenen Webscraping-Tools, wie hoch der Frauenanteil unter den Autor:innen von Leitartikeln in fünf großen deutschen Online-Zeitungen ist. Die Analyse basiert auf einem Datensatz aus knapp einem Jahr und beleuchtet, wer in den Medien nicht nur dargestellt, sondern auch gehört wird." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://jieshankong.github.io/posts/data_female_writers_in_newspaper/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-02-25T00:00:00+00:00" />
+<meta property="article:modified_time" content="2022-02-25T00:00:00+00:00" />
+
+
+<title>jskong | Wer schreibt die Nachrichten? – Eine datengestützte Spurensuche zur Geschlechterverteilung im Journalismus</title>
+
+      <link rel="stylesheet" href="/css/main.min.698bc3e32b756e1f5322e47c0a024ef4fef02de7ddbc5af443455430b5482f03.css" integrity="sha256-aYvD4yt1bh9TIuR8CgJO9P7wLefdvFr0Q0VUMLVILwM=" crossorigin="anonymous">
+  
+        <link rel="stylesheet" href="/css/palette/catpuccin.min.a6f1bd4508a6b97805eeaaeb50fc8c575ad5fa2c430125dd9d003f2ea254600d.css" integrity="sha256-pvG9RQimuXgF7qrrUPyMV1rV&#43;ixDASXdnQA/LqJUYA0=" crossorigin="anonymous">
+
+      <script src="/js/main.86bb3d8e6f46df0fc97c2731e6b99175a13b87a4086acf578ff9b6992fcf32c1.js" integrity="sha256-hrs9jm9G3w/JfCcx5rmRdaE7h6QIas9Xj/m2mS/PMsE=" crossorigin="anonymous"></script>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+<link rel="stylesheet" href="/css/style.css">
+</head>
+
+  
+<body
+    class="dark"
+>
+  
+  <main>
+    
+  <div class="container pt-5">
+    <div class="row mt-5 pt-5">
+      
+  <nav aria-label="breadcrumb" class="small">
+    <ol class="breadcrumb fw-bold">
+    <li class="breadcrumb-item">
+      <a href="/"
+        
+      >home</a>
+      
+    </li>
+    <li class="breadcrumb-item">
+      <a href="/about"
+        
+      >about</a>
+      
+    </li>
+    <li class="breadcrumb-item">
+      <a href="/posts"
+        class="text-decoration-underline link-offset-3"
+        
+      >posts</a>
+      
+    </li>
+    <li class="breadcrumb-item">
+      <a href="https://github.com/imgios/not-much"
+        
+          target="_blank" rel="noopener noreferrer"
+        
+      >github</a>
+      
+    </li>
+    </ol>
+  </nav>
+
+    </div>
+    
+    <div class="d-none d-lg-block position-fixed end-0 small toc">
+      <p class="toc-title">
+        Table of Contents:
+      </p>
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#geschlechterverhältnisse-im-medienalltag--ein-persönlicher-blick">Geschlechterverhältnisse im Medienalltag – ein persönlicher Blick</a></li>
+    <li><a href="#ein-blick-auf-die-zahlen-316-">Ein Blick auf die Zahlen: 31,6 %</a></li>
+    <li><a href="#thoughts">Thoughts</a></li>
+  </ul>
+</nav>
+    </div>
+    
+    <div class="post">
+      <header class="mb-4">
+        <h1 class="text-uppercase">Wer schreibt die Nachrichten? – Eine datengestützte Spurensuche zur Geschlechterverteilung im Journalismus</h1>
+        
+        
+        <div aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item small">
+              <time datetime="2022-02-25T00:00:00&#43;00:00">February 25, 2022</time>
+            </li>
+            <li class="breadcrumb-item small">
+              3 minutes
+            </li>
+          </ol>
+        </div>
+      </header>
+      <article>
+        <h2 id="geschlechterverhältnisse-im-medienalltag--ein-persönlicher-blick">Geschlechterverhältnisse im Medienalltag – ein persönlicher Blick</h2>
+<p>Die Idee zu diesem Projekt entstand durch die zunehmende Aufmerksamkeit für das Thema Geschlechtergerechtigkeit im Medienbereich. Ich habe einen <a href="https://www.pro-quote.de/wp-content/uploads/2024/10/2024_ProQuote-Studie_Fuehrungsfrauen_in_den_Medien.pdf">Bericht von ProQuote Medien aus dem Jahr 2019</a> gelesen. Darin ging es um eine Studie zur Geschlechterverteilung in journalistischen Führungspositionen in Deutschland.</p>
+<p>Das Ergebnis: Bei den zehn untersuchten überregionalen Tages- und Wochenzeitungen lag der durchschnittliche Frauenanteil in Führungspositionen bei nur <strong>25,1 %</strong>.</p>
+<p>Das hat mein Interesse geweckt – und ich bin bei meiner Recherche auf ein spannendes Tool gestoßen: <a href="https://www.prognosis.se/">Prognosis</a>, entwickelt vom schwedischen Data Scientist Max Berggren. Dieses Tool scannt alle fünf Minuten die Online-Auftritte von Zeitungen und erstellt Statistiken darüber, wie oft männliche und weibliche Namen in Artikeln vorkommen.</p>
+<p>Die Online-Auftritte der 13 wichtigsten deutschen Zeitungen wurden damit analysiert. Der Anteil von Frauennamen in den Texten schwankt zwischen <strong>20,9 % und 50 %</strong>.</p>
+<p>Das zeigt: Es gibt verschiedene Ebenen, auf denen Geschlechterverhältnisse in den Medien betrachtet werden können – wer entscheidet, wer dargestellt wird und schließlich: wer schreibt.
+Mich interessiert nun diese dritte Perspektive: Wer verfasst die Artikel?
+Denn, wie man so schön sagt:
+„Wer wird von wem präsentiert?“ – It does matter.
+Mit dieser Frage beginnt mein Projekt: Wie hoch ist der Anteil von Journalistinnen unter den Autorinnen und Autoren deutscher Leitmedien?</p>
+<h2 id="ein-blick-auf-die-zahlen-316-">Ein Blick auf die Zahlen: 31,6 %</h2>
+<p>Für mein Projekt wurde ein Python-Skript auf einem Cloud-Server eingerichtet. Es lief täglich automatisch und hat die Startseiten von fünf der bedeutendsten überregionalen deutschen Online-Zeitungen gespeichert. Die Daten<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> wurden in einem Ordner (data lake) in der Cloud abgelegt. Die Sammlung lief fast ein Jahr lang, vom 03.03.2021 bis zum 31.01.2022. Im nächsten Schritt wurden die Namen der Journalist:innen aus jedem Leitartikel jeder Zeitung extrahiert. So bekam ich das Ergebnis:</p>
+<p>Bei den fünf untersuchten Medienhäusern liegt der durchschnittliche Frauenanteil unter den Autor:innen der Leitartikel bei <strong>31,6 %</strong>.
+Das bedeutet: Journalistinnen haben im Vergleich zu ihren männlichen Kollegen etwa <strong>20 % geringere Chancen</strong>, einen Leitartikel zu veröffentlichen.</p>
+<table>
+<thead>
+<tr>
+<th>Zeitungen</th>
+<th style="text-align:center">Frauenquote im Leitartikel</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>taz</td>
+<td style="text-align:center">33,0%</td>
+</tr>
+<tr>
+<td>zeit</td>
+<td style="text-align:center">37,8%</td>
+</tr>
+<tr>
+<td>sz</td>
+<td style="text-align:center">29,3%</td>
+</tr>
+<tr>
+<td>welt</td>
+<td style="text-align:center">27,7%</td>
+</tr>
+<tr>
+<td>faz</td>
+<td style="text-align:center">30,2%</td>
+</tr>
+</tbody>
+</table>
+<h2 id="thoughts">Thoughts</h2>
+<p>In der Praxis ist es doch nicht so einfach, Namen nach Geschlechtern einzuordnen.</p>
+<p>Einige Artikel wurden gemeinsam verfasst, und in manchen Fällen fehlten die Namen der Journalist:innen ganz. Zum Beispiel: Drei männliche Verfasser und eine weibliche Verfasserin haben gemeinsam einen Artikel geschrieben – möglicherweise war eine davon die Fotograf:in.</p>
+<p>In solchen Fällen stellt sich die Frage: Wie soll man das zählen? Gehört der Artikel zu 25 % der Frau? Oder zählt man einfach drei Männer und eine Frau?</p>
+<p>Der Name lässt nicht immer eindeutig auf das Geschlecht schließen. Zum Beispiel ist ‚Andrea‘ im Deutschen ein weiblicher Vorname – bei einer Person mit italienischem Hintergrund kann er aber männlich sein. Auch Namen wie ‚Deniz‘, ‚Noor‘ oder viele chinesische Namen – besonders in lateinischer Schreibweise – wirken oft unisex und sind schwer zuzuordnen.</p>
+<p>Auch bei nicht-binären Personen kann ein Name zwar auf ein bestimmtes Geschlecht hinweisen – aber das muss nicht ihrer tatsächlichen Identität entsprechen.</p>
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p>In dieser Zeit sind insgesamt 1.675 HTML-Dateien entstanden, dazu 335 CSV-Dateien ie Metainformationen wie Name (Abkürzung), URL, Encoding und Datum des Downloads enthalten.&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+
+      </article>
+      
+  <div class="tags pb-4 pt-2">
+    
+    
+        <a class="badge rounded-pill text-uppercase text-bg-secondary" href="/tags/project/">project</a>
+        <a class="badge rounded-pill text-uppercase text-bg-secondary" href="/tags/thoughts/">thoughts</a>
+  </div>
+
+      <div class="row">
+    <div class="col-md">
+        
+    </div>
+    <div class="col-md text-md-end">
+        
+        <a href="https://jieshankong.github.io/posts/example-post/">
+            <span>next: </span>
+            <span>Welcome To not-much</span>
+        </a>
+        
+    </div>
+</div>
+    </div>
+  </div>
+  <footer>
+    <div class="container mt-4 pb-1">
+    <p class="small opacity-75">
+        Sample custom notice © 2025
+        
+        // powered by <a href="https://gohugo.io/">hugo</a> and <a href="https://github.com/imgios/not-much">imgios/not-much</a>
+        
+    </p>
+</div>
+
+  </footer>
+
+  </main>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
