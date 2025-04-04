@@ -7,12 +7,12 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Sample custom notice © {year}</copyright>
-    <lastBuildDate>Thu, 13 Mar 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 13 Aug 2024 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://jieshankong.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Von Datenchaos zu smartem Chatbot: Worauf es bei der Trainingsdaten-Erstellung ankommt</title>
       <link>https://jieshankong.github.io/posts/data_chatbot/</link>
-      <pubDate>Thu, 13 Mar 2025 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 13 Aug 2024 00:00:00 +0000</pubDate>
       <guid>https://jieshankong.github.io/posts/data_chatbot/</guid>
       <description>Ein Chatbot ist nur so gut wie seine Daten. In diesem Artikel geht es darum, wie du typische Herausforderungen bei der Datenvorbereitung erkennst und löst – verständlich erklärt für alle, die Chatbots trainieren, pflegen oder umsetzen.</description>
     </item>
@@ -22,6 +22,13 @@
       <pubDate>Mon, 18 Mar 2024 00:00:00 +0000</pubDate>
       <guid>https://jieshankong.github.io/posts/example-post/</guid>
       <description>This is an example post with a very short content and a single header.</description>
+    </item>
+    <item>
+      <title>Wer schreibt die Nachrichten? – Eine datengestützte Spurensuche zur Geschlechterverteilung im Journalismus</title>
+      <link>https://jieshankong.github.io/posts/female_writers_in_news/data_female_writers_in_newspaper/</link>
+      <pubDate>Fri, 25 Feb 2022 00:00:00 +0000</pubDate>
+      <guid>https://jieshankong.github.io/posts/female_writers_in_news/data_female_writers_in_newspaper/</guid>
+      <description>In diesem Artikel gehe ich der Frage nach, wer die Leitartikel in deutschen Online-Zeitungen schreibt – und wie hoch der Anteil von Journalistinnen ist. Ein selbst entwickeltes Webscraping-Tool hat über ein Jahr hinweg täglich Daten gesammelt. Das Ergebnis: Nur rund 31,6 % der Autor:innen sind Frauen. Die Analyse zeigt, dass Geschlechterverhältnisse im Journalismus nicht nur eine Frage der Darstellung, sondern auch der Autorenschaft sind.</description>
     </item>
   </channel>
 </rss>
