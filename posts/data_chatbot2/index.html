@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head>
+  
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" type="image/png" href="https://jieshankong.github.io/favicon.ico" />
+<meta property="og:title" content="Was ich gern früher gewusst hätte – Learnings aus der Chatbot-Umsetzung" />
+<meta property="og:description" content="Drei typische Fehler bei der Chatbot-Einführung – aus Sicht einer Data Engineer mit Projektverantwortung. Mit praktischen Tipps für Planung, Handover und Pflege." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://jieshankong.github.io/posts/data_chatbot2/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2024-09-03T00:00:00+00:00" />
+<meta property="article:modified_time" content="2024-09-03T00:00:00+00:00" />
+
+
+<title>jskong | Was ich gern früher gewusst hätte – Learnings aus der Chatbot-Umsetzung</title>
+
+      <link rel="stylesheet" href="/css/main.min.698bc3e32b756e1f5322e47c0a024ef4fef02de7ddbc5af443455430b5482f03.css" integrity="sha256-aYvD4yt1bh9TIuR8CgJO9P7wLefdvFr0Q0VUMLVILwM=" crossorigin="anonymous">
+  
+        <link rel="stylesheet" href="/css/palette/catpuccin.min.a6f1bd4508a6b97805eeaaeb50fc8c575ad5fa2c430125dd9d003f2ea254600d.css" integrity="sha256-pvG9RQimuXgF7qrrUPyMV1rV&#43;ixDASXdnQA/LqJUYA0=" crossorigin="anonymous">
+
+      <script src="/js/main.86bb3d8e6f46df0fc97c2731e6b99175a13b87a4086acf578ff9b6992fcf32c1.js" integrity="sha256-hrs9jm9G3w/JfCcx5rmRdaE7h6QIas9Xj/m2mS/PMsE=" crossorigin="anonymous"></script>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+<link rel="stylesheet" href="/css/style.css">
+</head>
+
+  
+<body
+    class="dark"
+>
+  
+  <main>
+    
+  <div class="container pt-5">
+    <div class="row mt-5 pt-5">
+      
+  <nav aria-label="breadcrumb" class="small">
+    <ol class="breadcrumb fw-bold">
+    <li class="breadcrumb-item">
+      <a href="/"
+        
+      >home</a>
+      
+    </li>
+    <li class="breadcrumb-item">
+      <a href="/about"
+        
+      >about</a>
+      
+    </li>
+    <li class="breadcrumb-item">
+      <a href="/posts"
+        class="text-decoration-underline link-offset-3"
+        
+      >posts</a>
+      
+    </li>
+    <li class="breadcrumb-item">
+      <a href="https://github.com/imgios/not-much"
+        
+          target="_blank" rel="noopener noreferrer"
+        
+      >github</a>
+      
+    </li>
+    </ol>
+  </nav>
+
+    </div>
+    
+    <div class="d-none d-lg-block position-fixed end-0 small toc">
+      <p class="toc-title">
+        Table of Contents:
+      </p>
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#nlg-nice-to-have-oder-must-have">NLG: Nice to have oder Must-have?</a></li>
+    <li><a href="#handover-ist-kein-reset">Handover ist kein Reset</a></li>
+    <li><a href="#heading"></a></li>
+  </ul>
+</nav>
+    </div>
+    
+    <div class="post">
+      <header class="mb-4">
+        <h1 class="text-uppercase">Was ich gern früher gewusst hätte – Learnings aus der Chatbot-Umsetzung</h1>
+        
+        
+        <div aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item small">
+              <time datetime="2024-09-03T00:00:00&#43;00:00">September 3, 2024</time>
+            </li>
+            <li class="breadcrumb-item small">
+              4 minutes
+            </li>
+          </ol>
+        </div>
+      </header>
+      <article>
+        <p>Kürzlich hat mich eine Freundin gefragt, was die drei wichtigsten Erkenntnisse aus meinem Chatbot-Projekt waren. Sie arbeitet seit vielen Jahren als Projektmanagerin im IT-Bereich und wollte wissen, worauf man bei der Umsetzung achten sollte. Ihre Frage hat mich zum Nachdenken gebracht – nicht nur über das, was gut lief, sondern auch über die Umwege und Stolpersteine, die ich gern vermieden hätte.</p>
+<p>In diesem Artikel teile ich einige typische Fehler, die mir aus der Perspektive einer Data Engineer mit Projektverantwortung begegnet sind. Vielleicht hilft das anderen, die einen Chatbot einführen wollen – oder dabei sind, es zu planen.</p>
+<h2 id="nlg-nice-to-have-oder-must-have">NLG: Nice to have oder Must-have?</h2>
+<p>Bevor man einen Chatbot entwickelt, sollte man sich gut überlegen, wie er „klingen“ soll. Soll der Bot locker und freundlich wirken oder eher neutral und sachlich? Duzen oder Siezen? Und will man, dass Nutzende sofort merken, dass sie mit einem Bot sprechen – oder soll das möglichst natürlich und menschlich wirken?</p>
+<p>Diese Fragen wirken auf den ersten Blick fast schon abgenutzt. Doch sie sind nach wie vor entscheidend – vor allem, weil sich die Technologie in den letzten Jahren stark weiterentwickelt hat. Chatbots können heute nicht nur verstehen, was wir sagen (Natural Language Understanding, kurz NLU), sondern auch selbst passende Antworten formulieren. Das nennt man Natural Language Generation (NLG) – also die Fähigkeit, eigene Texte zu „formulieren“, statt nur vordefinierte Antworten auszugeben.</p>
+<p>Bevor man sich in die Feinheiten von NLG stürzt, sollte man sich eine grundlegende Frage stellen: <strong>Brauchen wir überhaupt einen Bot, der „frei spricht“ – also Antworten eigenständig formuliert?</strong></p>
+<p>In vielen Fällen lautet die ehrliche Antwort: <strong>Jein</strong>.</p>
+<p>Gerade in Unternehmen gibt es oft klare – manchmal sogar sehr strenge – Richtlinien für die externe Kommunikation. Formulierungen sind genau abgestimmt, und oft existieren bereits Standard-FAQs mit vordefinierten Antworten. In solchen Fällen reicht es völlig aus, wenn der Chatbot diese Inhalte gezielt und zuverlässig wiedergibt (Übrigens: Diese FAQs sind fast immer der erste Einstieg in die Datenquelle für das Projekt. Sie bieten eine gute Grundlage, um erste Versionen des Chatbots zu trainieren oder zu konfigurieren.)</p>
+<p>NLG lohnt sich vor allem dann, wenn der Bot flexibel auf freie Eingaben reagieren soll – etwa bei komplexeren oder weniger standardisierten Anliegen. Aber diese Entscheidung sollte bewusst getroffen werden – und nicht nur, weil es technisch möglich ist.</p>
+<h2 id="handover-ist-kein-reset">Handover ist kein Reset</h2>
+<p>Wenn ein Chatbot nicht weiterweiß, wird die Unterhaltung meist an den Kundenservice übergeben. Das klingt erstmal sinnvoll – doch in der Praxis führt das oft zu Frust auf beiden Seiten.</p>
+<p>Viele Benutzer:innen schreiben ihre Anfrage gleich zu Beginn der Unterhaltung ausführlich und in einem langen Text. Wenn sie daraufhin nur eine Standardantwort erhalten wie „Leider kann ich dir dabei nicht helfen – ich leite dich weiter“, fühlen sich viele enttäuscht. Denn im nächsten Schritt beginnt die Unterhaltung zwar mit einem Menschen – aber oft auch von vorn. Ohne Kontext.</p>
+<p>Wenn der Chatverlauf nicht gespeichert wird oder die Person die Nachricht nicht noch einmal kopieren und einfügen kann, entsteht doppelter Aufwand. Das führt nicht nur zu einer schlechten Nutzererfahrung, sondern auch zu einem höheren Arbeitsaufwand für den Service.</p>
+<p>Eine mögliche Lösung: ein automatisches Zusammenfassen der Anfrage. Mit Hilfe einer Textzusammenfassung kann der Chatbot beim Handover die wichtigsten Punkte der Nachricht extrahieren und direkt an den Kundenservice übermitteln. Im besten Fall kann die zuständige Person direkt auf die eigentliche Frage eingehen – ohne unnötige Wiederholung.</p>
+<h2 id="heading"></h2>
+<p>Ein Chatbot ist kein Einmal-Projekt. Auch wenn die technische Entwicklung sorgfältig geplant und umgesetzt wurde – langfristig erfolgreich ist ein Bot nur, wenn er regelmäßig gepflegt und weiterentwickelt wird.</p>
+<p>Mit der Zeit ändern sich Fragen, Informationen müssen aktualisiert werden, oder es kommen ganz neue Themen dazu. Genauso wichtig ist das sogenannte Re-Labeling: Fälle, in denen der Bot eine Eingabe nicht richtig erkannt hat, sollten überprüft und nachtrainiert werden – sonst sinkt die Genauigkeit und damit das Vertrauen der Nutzenden.</p>
+<p>Die entscheidende Frage ist also: <strong>Wer übernimmt diese Aufgabe – und wie?</strong></p>
+<p>Oft gehört die laufende Betreuung nicht mehr zum Aufgabenbereich des Entwicklungsteams. Stattdessen braucht es eine oder mehrere Personen, die sowohl die Hauptsprache des Bots beherrschen – also die Sprache, in der die KI ursprünglich trainiert wurde – als auch ein grundlegendes Verständnis für die Funktionsweise des Systems mitbringen. Je nach Umfang der Nutzung kann diese Pflege einige Stunden pro Tag beanspruchen – oder sogar eine eigene Stelle rechtfertigen.</p>
+<p>Ein weiterer Punkt, der gern unterschätzt wird, ist der Redaktionsprozess: Wer entscheidet, ob und wie eine Antwort geändert wird? In der Praxis reicht es selten aus, wenn die verantwortliche Person allein über neue Formulierungen oder Inhalte entscheidet. Meistens braucht es zusätzlich eine Abnahme – sei es durch ein Teamlead, durch die Serviceabteilung oder sogar über mehrere Abstimmungsschleifen mit anderen Abteilungen. Dieser Prozess sollte von Anfang an mitgedacht und klar geregelt werden.</p>
+<p>Bleibt unklar, wer die Verantwortung trägt – fachlich wie organisatorisch –, ist es nur eine Frage der Zeit, bis selbst der beste Chatbot ins Straucheln gerät.</p>
+
+      </article>
+      
+  <div class="tags pb-4 pt-2">
+    
+    
+        <a class="badge rounded-pill text-uppercase text-bg-secondary" href="/tags/project/">project</a>
+        <a class="badge rounded-pill text-uppercase text-bg-secondary" href="/tags/thoughts/">thoughts</a>
+  </div>
+
+      <div class="row">
+    <div class="col-md">
+        
+        <a href="https://jieshankong.github.io/posts/data_chatbot/">
+            <span>previous: </span>
+            <span>Von Datenchaos zu smartem Chatbot: Worauf es bei der Trainingsdaten-Erstellung ankommt</span>
+        </a>
+        
+    </div>
+    <div class="col-md text-md-end">
+        
+    </div>
+</div>
+    </div>
+  </div>
+  <footer>
+    <div class="container mt-4 pb-1">
+    <p class="small opacity-75">
+        Sample custom notice © 2025
+        
+        // powered by <a href="https://gohugo.io/">hugo</a> and <a href="https://github.com/imgios/not-much">imgios/not-much</a>
+        
+    </p>
+</div>
+
+  </footer>
+
+  </main>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>

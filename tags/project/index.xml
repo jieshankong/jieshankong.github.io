@@ -7,8 +7,15 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Sample custom notice © {year}</copyright>
-    <lastBuildDate>Tue, 13 Aug 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 03 Sep 2024 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://jieshankong.github.io/tags/project/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Was ich gern früher gewusst hätte – Learnings aus der Chatbot-Umsetzung</title>
+      <link>https://jieshankong.github.io/posts/data_chatbot2/</link>
+      <pubDate>Tue, 03 Sep 2024 00:00:00 +0000</pubDate>
+      <guid>https://jieshankong.github.io/posts/data_chatbot2/</guid>
+      <description>Ein gut funktionierender Chatbot entsteht nicht nur durch gute Planung – sondern auch durch realistische Entscheidungen und klare Verantwortlichkeiten. In diesem Artikel teile ich drei zentrale Learnings aus meinem Projekt: Wann lohnt sich Natural Language Generation wirklich? Wie kann man das Handover an den Kundenservice verbessern? Und wer kümmert sich eigentlich langfristig um die Pflege des Systems? Ein Erfahrungsbericht mit praktischer Perspektive.</description>
+    </item>
     <item>
       <title>Von Datenchaos zu smartem Chatbot: Worauf es bei der Trainingsdaten-Erstellung ankommt</title>
       <link>https://jieshankong.github.io/posts/data_chatbot/</link>
