@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Kommunikation on jskong</title>
+    <link>https://jieshankong.github.io/tags/kommunikation/</link>
+    <description>Recent content in Kommunikation on jskong</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Sample custom notice © {year}</copyright>
+    <lastBuildDate>Tue, 08 Apr 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://jieshankong.github.io/tags/kommunikation/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Anekdote: The Mind Of Stakeholders</title>
+      <link>https://jieshankong.github.io/posts/data_countdown/</link>
+      <pubDate>Tue, 08 Apr 2025 00:00:00 +0000</pubDate>
+      <guid>https://jieshankong.github.io/posts/data_countdown/</guid>
+      <description>Unser Team sollte fürs Marketing einen Ticket-Countdown bauen. Klingt einfach – wurde aber zur Denkschleife rund um Daten-Echtheit, Authentizität und technische Lösungen. Am Ende stellte sich heraus: Die Antwort war viel einfacher, als wir dachten. Man muss nur fragen.</description>
+    </item>
+  </channel>
+</rss>

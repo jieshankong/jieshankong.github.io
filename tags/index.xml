@@ -10,52 +10,45 @@
     <lastBuildDate>Tue, 08 Apr 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://jieshankong.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Anekdote</title>
+      <link>https://jieshankong.github.io/tags/anekdote/</link>
+      <pubDate>Tue, 08 Apr 2025 00:00:00 +0000</pubDate>
+      <guid>https://jieshankong.github.io/tags/anekdote/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Kommunikation</title>
+      <link>https://jieshankong.github.io/tags/kommunikation/</link>
+      <pubDate>Tue, 08 Apr 2025 00:00:00 +0000</pubDate>
+      <guid>https://jieshankong.github.io/tags/kommunikation/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Stakeholder</title>
+      <link>https://jieshankong.github.io/tags/stakeholder/</link>
+      <pubDate>Tue, 08 Apr 2025 00:00:00 +0000</pubDate>
+      <guid>https://jieshankong.github.io/tags/stakeholder/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Tech vs. Realität</title>
+      <link>https://jieshankong.github.io/tags/tech-vs.-realit%C3%A4t/</link>
+      <pubDate>Tue, 08 Apr 2025 00:00:00 +0000</pubDate>
+      <guid>https://jieshankong.github.io/tags/tech-vs.-realit%C3%A4t/</guid>
+      <description></description>
+    </item>
+    <item>
       <title>project</title>
       <link>https://jieshankong.github.io/tags/project/</link>
-      <pubDate>Tue, 08 Apr 2025 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 03 Sep 2024 00:00:00 +0000</pubDate>
       <guid>https://jieshankong.github.io/tags/project/</guid>
       <description></description>
     </item>
     <item>
       <title>thoughts</title>
       <link>https://jieshankong.github.io/tags/thoughts/</link>
-      <pubDate>Tue, 08 Apr 2025 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 03 Sep 2024 00:00:00 +0000</pubDate>
       <guid>https://jieshankong.github.io/tags/thoughts/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>hugo</title>
-      <link>https://jieshankong.github.io/tags/hugo/</link>
-      <pubDate>Thu, 13 Mar 2025 00:00:00 +0000</pubDate>
-      <guid>https://jieshankong.github.io/tags/hugo/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>themes</title>
-      <link>https://jieshankong.github.io/tags/themes/</link>
-      <pubDate>Thu, 13 Mar 2025 00:00:00 +0000</pubDate>
-      <guid>https://jieshankong.github.io/tags/themes/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>css</title>
-      <link>https://jieshankong.github.io/tags/css/</link>
-      <pubDate>Sat, 14 Dec 2024 00:00:00 +0000</pubDate>
-      <guid>https://jieshankong.github.io/tags/css/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>html</title>
-      <link>https://jieshankong.github.io/tags/html/</link>
-      <pubDate>Sat, 14 Dec 2024 00:00:00 +0000</pubDate>
-      <guid>https://jieshankong.github.io/tags/html/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>markdown</title>
-      <link>https://jieshankong.github.io/tags/markdown/</link>
-      <pubDate>Sat, 14 Dec 2024 00:00:00 +0000</pubDate>
-      <guid>https://jieshankong.github.io/tags/markdown/</guid>
       <description></description>
     </item>
   </channel>

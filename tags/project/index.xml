@@ -7,15 +7,8 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Sample custom notice © {year}</copyright>
-    <lastBuildDate>Tue, 08 Apr 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 03 Sep 2024 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://jieshankong.github.io/tags/project/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Anekdote: The Mind Of Stakeholder</title>
-      <link>https://jieshankong.github.io/posts/data_countdown/</link>
-      <pubDate>Tue, 08 Apr 2025 00:00:00 +0000</pubDate>
-      <guid>https://jieshankong.github.io/posts/data_countdown/</guid>
-      <description>x</description>
-    </item>
     <item>
       <title>Was ich gern früher gewusst hätte – Learnings aus der Chatbot-Umsetzung</title>
       <link>https://jieshankong.github.io/posts/data_chatbot2/</link>
