@@ -7,8 +7,15 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Sample custom notice © {year}</copyright>
-    <lastBuildDate>Mon, 18 Mar 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 13 Mar 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://jieshankong.github.io/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Hugo Table of Contents showcase</title>
+      <link>https://jieshankong.github.io/posts/toc-showcase/</link>
+      <pubDate>Thu, 13 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>https://jieshankong.github.io/posts/toc-showcase/</guid>
+      <description>This post shows the default Hugo Table of Contents and how not-much handle it.</description>
+    </item>
     <item>
       <title>Welcome To not-much</title>
       <link>https://jieshankong.github.io/posts/example-post/</link>

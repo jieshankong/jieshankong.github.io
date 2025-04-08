@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head>
+  
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" type="image/png" href="https://jieshankong.github.io/favicon.ico" />
+<meta property="og:title" content="Anekdote: The Mind Of Stakeholder" />
+<meta property="og:description" content="xx" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://jieshankong.github.io/posts/data_countdown/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2025-04-08T00:00:00+00:00" />
+<meta property="article:modified_time" content="2025-04-08T00:00:00+00:00" />
+
+
+<title>jskong | Anekdote: The Mind Of Stakeholder</title>
+
+      <link rel="stylesheet" href="/css/main.min.698bc3e32b756e1f5322e47c0a024ef4fef02de7ddbc5af443455430b5482f03.css" integrity="sha256-aYvD4yt1bh9TIuR8CgJO9P7wLefdvFr0Q0VUMLVILwM=" crossorigin="anonymous">
+  
+        <link rel="stylesheet" href="/css/palette/catpuccin.min.a6f1bd4508a6b97805eeaaeb50fc8c575ad5fa2c430125dd9d003f2ea254600d.css" integrity="sha256-pvG9RQimuXgF7qrrUPyMV1rV&#43;ixDASXdnQA/LqJUYA0=" crossorigin="anonymous">
+
+      <script src="/js/main.86bb3d8e6f46df0fc97c2731e6b99175a13b87a4086acf578ff9b6992fcf32c1.js" integrity="sha256-hrs9jm9G3w/JfCcx5rmRdaE7h6QIas9Xj/m2mS/PMsE=" crossorigin="anonymous"></script>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+<link rel="stylesheet" href="/css/style.css">
+</head>
+
+  
+<body
+    class="dark"
+>
+  
+  <main>
+    
+  <div class="container pt-5">
+    <div class="row mt-5 pt-5">
+      
+  <nav aria-label="breadcrumb" class="small">
+    <ol class="breadcrumb fw-bold">
+    <li class="breadcrumb-item">
+      <a href="/"
+        
+      >home</a>
+      
+    </li>
+    <li class="breadcrumb-item">
+      <a href="/about"
+        
+      >about</a>
+      
+    </li>
+    <li class="breadcrumb-item">
+      <a href="/posts"
+        class="text-decoration-underline link-offset-3"
+        
+      >posts</a>
+      
+    </li>
+    <li class="breadcrumb-item">
+      <a href="https://github.com/imgios/not-much"
+        
+          target="_blank" rel="noopener noreferrer"
+        
+      >github</a>
+      
+    </li>
+    </ol>
+  </nav>
+
+    </div>
+    
+    <div class="d-none d-lg-block position-fixed end-0 small toc">
+      <p class="toc-title">
+        Table of Contents:
+      </p>
+      <nav id="TableOfContents"></nav>
+    </div>
+    
+    <div class="post">
+      <header class="mb-4">
+        <h1 class="text-uppercase">Anekdote: The Mind Of Stakeholder</h1>
+        
+        
+        <div aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item small">
+              <time datetime="2025-04-08T00:00:00&#43;00:00">April 8, 2025</time>
+            </li>
+            <li class="breadcrumb-item small">
+              2 minutes
+            </li>
+          </ol>
+        </div>
+      </header>
+      <article>
+        <p>Neulich hatten wir im Team eine kleine Aufgabe auf dem Tisch: Das Marketing-Team wollte auf der offiziellen Webseite einen Countdown einbauen. Die Idee: Anzeigen, wie viele Tickets es noch für eine bestimmte Show gibt. Unsere Aufgabe war es, den Website-Leuten genau die Daten zu liefern, die sie dafür im Backend brauchen.</p>
+<p>Unser Team – datenaffin und ein kleines bisschen zu sehr verliebt in physische Authentizität – wollte natürlich am liebsten möglichst live zeigen, wie viele Tickets gerade noch verfügbar sind🤔.</p>
+<p>Das Marketing-Team dagegen, stark auf die Perspektive der Kund:innen fokussiert, verfolgte einen anderen Ansatz: Für sie sollte der Countdown vor allem eines tun – ein Gefühl von Dringlichkeit erzeugen. So nach dem Motto: „Wenn du jetzt nicht buchst, ist es gleich zu spät!“</p>
+<p>Da der Ticketserver keine echten Live-Daten liefern kann, hat mein Team sofort angefangen, das Authentizitätsproblem zu lösen (was mit dem Marketingproblem eigentlich nichts zu tun hatte😂):</p>
+<ul>
+<li>Lösung 1: Die Daten direkt bei jedem Website-Besuch abrufen. Dafür hätten wir über mehrere Schnittstellen jedes Mal eine Anfrage an den Ticketserver geschickt – also quasi: Du klickst drauf, wir rennen los und fragen nach.</li>
+<li>Lösung 2: Die Daten nur einmal pro Tag vom Ticketserver ziehen, und dann im Laufe des Tages alle 15 Minuten ein bisschen runterrechnen – prozentual. Eine Art Illusion von Bewegung, ohne echte Bewegung.</li>
+<li>Lösung 3: Einen zwischengespeicherten Datenstand verwenden, der sich stündlich aktualisiert. Nicht ganz live, aber immerhin regelmäßig – eine Art Kompromiss zwischen Echtzeit und Server-Schonung.</li>
+<li>Lösung 4: Gar keine echten Zahlen anzeigen, sondern nur eine visuelle Anzeige wie einen Balken oder eine Countdown-Anzeige mit Symbolen („Nur noch wenige verfügbar!“). Keine Zahlen, kein Stress – aber auch keine Authentizität.</li>
+<li>Lösung X: &hellip;</li>
+</ul>
+<p>Wir waren da aber noch tief im Zahlendenken verhaftet – möglichst echt, möglichst präzise. Aber Moment mal. Bevor wir irgendwas entscheiden oder umsetzen, lass uns doch erstmal kurz mit dem Marketing-Team reden. Einfach fragen, was ihnen wirklich wichtig ist.</p>
+<p>Und was kam im Gespräch raus?</p>
+<p>Marketing sagte: „Wir brauchen gar keine präzisen Zahlen. <em>Weniger als XX</em> reicht völlig.“</p>
+<p>💡That’s it.💡</p>
+<p>Wie absurd einfach die Lösung plötzlich wirkte! Wir hatten derweil gedanklich schon halbe Rechenzentren gebaut – völlig umsonst.</p>
+
+      </article>
+      
+  <div class="tags pb-4 pt-2">
+    
+    
+        <a class="badge rounded-pill text-uppercase text-bg-secondary" href="/tags/project/">project</a>
+        <a class="badge rounded-pill text-uppercase text-bg-secondary" href="/tags/thoughts/">thoughts</a>
+  </div>
+
+      <div class="row">
+    <div class="col-md">
+        
+        <a href="https://jieshankong.github.io/posts/toc-showcase/">
+            <span>previous: </span>
+            <span>Hugo Table of Contents showcase</span>
+        </a>
+        
+    </div>
+    <div class="col-md text-md-end">
+        
+    </div>
+</div>
+    </div>
+  </div>
+  <footer>
+    <div class="container mt-4 pb-1">
+    <p class="small opacity-75">
+        Sample custom notice © 2025
+        
+        // powered by <a href="https://gohugo.io/">hugo</a> and <a href="https://github.com/imgios/not-much">imgios/not-much</a>
+        
+    </p>
+</div>
+
+  </footer>
+
+  </main>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
